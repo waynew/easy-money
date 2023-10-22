@@ -46,6 +46,12 @@ class Money:
     def __divmod__(self, other):
         raise error.DivisionError(f"Division between Money and {type(other)} is not supported.")
 
+    def __iadd__(self, other):
+        return Money(amount=self.amount + other.amount, currency=self.currency)
+
+    def __add__(self, other):
+        return self + other
+
     @property
     def dollars(self):
         return self.amount // 100
