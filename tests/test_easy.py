@@ -3,8 +3,8 @@ import pytest
 
 @pytest.fixture
 def money():
-    return easy_money.Money()
+    return easy_money.Account()
 
 
-def test_this_should_fail(money):
-    assert False
+def test_when_account_is_created_then_balance_should_be_zero(money):
+    assert money.balance == 0
