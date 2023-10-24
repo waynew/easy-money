@@ -30,3 +30,9 @@ classifiers = [
 
 [project.scripts]
 easy-money = "easy_money:do_it"
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "pytest-cov",
+]
