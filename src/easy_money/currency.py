@@ -50,7 +50,13 @@ class Money:
         return Money(amount=self.amount + other.amount, currency=self.currency)
 
     def __add__(self, other):
-        return self + other
+        return Money(amount=self.amount + other.amount, currency=self.currency)
+
+    def __sub__(self, other):
+        return Money(amount=self.amount - other.amount, currency=self.currency)
+
+    def __neg__(self):
+        return Money(amount=-self.amount, currency=self.currency)
 
     @property
     def dollars(self):
